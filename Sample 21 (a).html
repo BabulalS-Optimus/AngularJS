@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="mainController">
+	Quantity : <input type="number" ng-model="quant" /><br />
+	Price : <input type="number" ng-model="price" /><br />
+	Total : {{ total() | currency }}<br />
+	<p>
+		Status : <span ng-show="total() >= 100">Better :)</span>
+		<span ng-hide="total() >= 100">Need More !!!!</span>
+	</p>
+	<button ng-show="total() >= 100" >Save</button>
+</div>
+
+<script>
+	function mainController($scope){
+		$scope.quant = 10,
+		$scope.price = 6.7,
+		$scope.total = function(){
+			var result = $scope.quant * $scope.price;
+			return result;
+		}
+	}
+</script>
+</body>
+</html> 

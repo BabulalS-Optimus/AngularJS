@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-init="person=[{fname:'John', lname:'Miller'},
+{fname:'Tom', lname:'Cruize'},
+{fname:'Tom', lname:'Hanks'}
+]">
+  <ul>
+	<li ng-repeat="x in person | orderBy:'lname'">
+		{{ x.fname + " " + x.lname }}
+	</li>
+  </ul>
+</div>
+
+</body>
+</html> 

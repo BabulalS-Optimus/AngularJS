@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<style>
+	table, th , td {
+		border: 1px solid grey;
+		border-collapse: collapse;
+		padding: 5px;
+	}
+	th{
+		cursor:pointer;
+	}
+	table tr:nth-child(odd) {
+		background-color: #f1f1f1;
+	}
+	table tr:nth-child(even) {
+		background-color: #ffffff;
+	}
+</style>
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="customersController"> 
+
+<p>Enter some text to filter result : <input type="text" ng-model="filterText" /></p>
+
+<table>
+	<tr>
+		<th ng-click="nameClick()">Name</th>
+		<th ng-click="cityClick()">City</th>
+		<th ng-click="countryClick()">Country</th>
+	</tr>
+	<tr ng-repeat="x in names | orderBy:sortType:rev | filter:filterText">
+		<td>{{ x.Name }}</td>
+		<td>{{ x.City }}</td>
+		<td>{{ x.Country | uppercase }}</td>
+	</tr>
+</table>
+  
+</div>
+
+<script>
+function customersController($scope,$http) {
+
+	$http.get("Customers_JSON.php")
+	.success(function(response) {$scope.names = response;});
+
+	$scope.rev=false;
+	
+	$scope.nameClick=function(){
+		if($scope.sortType=='Name'){
+			$scope.rev=!$scope.rev;
+		}
+		else{
+			$scope.rev=false;
+		}
+		$scope.sortType='Name';
+	}
+	$scope.cityClick=function(){
+		if($scope.sortType=='City'){
+			$scope.rev=!$scope.rev;
+		}
+		else{
+			$scope.rev=false;
+		}
+		$scope.sortType='City';
+	}
+	$scope.countryClick=function(){
+		if($scope.sortType=='Country'){
+			$scope.rev=!$scope.rev;
+		}
+		else{
+			$scope.rev=false;
+		}
+		$scope.sortType='Country';
+	}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app = "" ng-controller = "myCtrl">
+	<form>
+		Name : <input type = "text" ng-model = "user.Name" /> <br />
+		Age : <input type = "number" ng-model = "user.Age" /> <br />
+		<button ng-click = "reset()">Reset</button>
+	</form>
+</div>
+
+<script>
+	function myCtrl($scope) {
+		$scope.master = { Name:"Tom Hanks", Age:22 };
+		$scope.reset = function() {
+			$scope.user = angular.copy($scope.master);
+		}
+		$scope.reset();		
+	};
+</script>
+</body>
+</html> 

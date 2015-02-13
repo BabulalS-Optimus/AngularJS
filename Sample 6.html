@@ -1,0 +1,16 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-init="person={fname:'John', lname:'Miller'}">
+  <p>The full name is : <span ng-bind="person.fname + ' ' + person.lname"></span></p>
+  <p>The full name is : {{ person.fname + " " + person.lname }}</p>
+</div>
+
+</body>
+</html> 

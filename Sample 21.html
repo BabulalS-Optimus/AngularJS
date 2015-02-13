@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="">
+	<button ng-show="test" >Save</button>
+	<button ng-hide="test" >Reset</button>
+	
+	
+	<p>
+		<input type="checkbox" ng-model="test" />Button
+	</p>
+	{{ test }}
+</div>
+
+</body>
+</html> 

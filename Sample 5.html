@@ -1,0 +1,16 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-init="msg1='Hello';msg2='How are you?'">
+  <p>The message is : <span ng-bind="msg1 + ',  ' + msg2"></span></p>
+  <p>The message is : {{ msg1 + ",  " + msg2 }}</p>
+</div>
+
+</body>
+</html> 

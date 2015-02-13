@@ -1,0 +1,20 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-init="person={fname:'Tom',lname:'Hanks'}">
+  <p>First Name: <input type="text" ng-model="person.fname"><br />
+  Last Name: <input type="text" ng-model="person.lname"></p>
+  <p>Copy of First Name: <input type="text" ng-model="person.fname"><br />
+  Copy of Last Name: <input type="text" ng-model="person.lname"></p>
+  
+  <p>Full Name : <span ng-bind="person.fname+' '+person.lname"></span></p>
+</div>
+
+</body>
+</html> 
